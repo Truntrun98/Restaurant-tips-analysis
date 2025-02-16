@@ -196,7 +196,7 @@ Output:
 - The visual representation highlights the higher frequency of larger tips among smokers. This insight can help businesses and service providers better understand customer behavior and potentially tailor their services accordingly.
 
 ### 👨👩 Do males give more tips?
-"In this question, I will perform the same steps as in the previous question: creating males_df and females_df, generating their histograms, and comparing them.
+In this question, I will perform the same steps as in the previous question: creating males_df and females_df, generating their histograms, and comparing them.
 
 Input:
 ```Python
@@ -262,3 +262,33 @@ Output:
 | Max       | 10.000  | 10.000  | 6.500    |
 | Mean      | 2.998   | 3.090   | 2.833    |
 | Median    | 2.900   | 3.000   | 2.750    |
+
+### Insights and Conclusions on Tipping Behavior: Males vs. Females
+
+#### Insight 1: Males Tend to Tip Slightly More Than Females
+
+- The mean tip value for males is slightly higher (3.090) compared to females (2.833).
+
+- The median tip value for males (3.00) is also higher than that of females (2.75).
+
+- This indicates that, on average, males tend to tip more than females.
+
+#### Insight 2: Distribution Range of Tips
+
+- The range of tips (difference between max and min values) is the same for the common dataset and males (10.000).
+
+- For females, the maximum tip is lower (6.500), suggesting that females have a narrower range of tip values.
+
+- Males contribute to the higher end of the tip distribution.
+
+#### Histogram Observations
+
+- The histogram for males shows a higher frequency at the upper end of the tip values compared to females.
+
+- Both histograms share a similar pattern at the lower end, indicating that the starting point for tipping is consistent across both groups.
+
+#### General Conclusion
+
+- Males, on average, tend to tip slightly more than females. This is reflected in both the mean and median tip values, which are higher for males compared to females. The mean tip value for males is approximately 3.09, while it is around 2.83 for females. Similarly, the median tip value for males is 3.00 compared to 2.75 for females.
+
+- The visual representation highlights the higher frequency of larger tips among males. This insight can help businesses and service providers better understand customer behavior and potentially tailor their services accordingly.
