@@ -116,4 +116,21 @@ common_tip_min = df['tip'].min()
 common_tip_max = df['tip'].max()
 common_tip_mean = df['tip'].mean()
 common_tip_median = df['tip'].median()
+
+#Create table to compare
+data_smoker_non_smoker = {
+    "Common": [df["tip"].min(), df["tip"].max(), df["tip"].mean(), df["tip"].median()],
+    "Smokers": [smokers_df["tip"].min(), smokers_df["tip"].max(), smokers_df["tip"].mean(), smokers_df["tip"].median()],
+    "Non-Smokers": [non_smokers_df["tip"].min(), non_smokers_df["tip"].max(), non_smokers_df["tip"].mean(), non_smokers_df["tip"].median()]
+} # Create a dictionary with the statistics
+index_labels = ["Min", "Max", "Mean", "Median"] # Define row labels
+smoking_compare_df = pd.DataFrame(ata_smoker_non_smoker, index=index_labels) # Create the DataFrame
+smoking_compare_df
 ```
+Output:
+|  | Common  | Smokers  | Non-Smokers |
+|------------|---------|----------|-------------|
+| Min       | 1.000   | 1.000    | 1.000       |
+| Max       | 10.000  | 10.000   | 9.000       |
+| Mean      | 2.998   | 3.009    | 2.992       |
+| Median    | 2.900   | 3.000    | 2.740       |
