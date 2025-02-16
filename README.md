@@ -413,3 +413,35 @@ Output:
 ![image](https://github.com/user-attachments/assets/25d6ecaa-20d7-4b62-8ba1-7d170a82e47b)
 ![image](https://github.com/user-attachments/assets/88343ae2-5e42-4acf-b174-4634afcd5415)
 
+### Insights and Conclusions on Tipping Behavior: Weekends' tips
+
+#### Insight 1: Weekdays vs. Weekends
+- Weekends (Sundays and Saturdays) tend to show higher variability and wider ranges compared to weekdays, which might indicate different patterns of behavior or activity on weekends.
+
+#### Insight 2: Mean and Median Comparison
+- The mean and median values are close for most days with available data, indicating a relatively balanced distribution of values.
+
+- Slight differences between mean and median can suggest minor skews in the data, either towards higher or lower values.
+
+#### Insight 3: Range and Variability
+- The range of values varies significantly across the dataset, with some days showing a wide range (e.g., Sundays and Saturdays) while others have more moderate ranges.
+
+- The highest range observed is in the common dataset and on Saturdays, with values from 1.000000 to 10.000000.
+
+#### Histogram Observations
+- The histogram for Sundays shows a wide range of tip values, with the highest frequency around 2 to 3.
+
+- The histogram for Thursdays shows a distribution with the highest frequency around 1 to 2.
+
+- The histogram for Fridays shows a distribution with the highest frequency around 2.5 to 3.
+
+- The histogram for Saturdays shows a wide range of tip values, with the highest frequency around 2.
+
+#### General Conclusion
+- The dataset reveals notable variability across different days, with weekends showing the highest range of values.
+
+- The mean and median values are generally close, indicating balanced distributions.
+
+- The missing data for Monday, Tuesday, and Wednesday presents a significant gap that must be addressed to achieve a complete analysis.
+
+- Histograms provide a visual representation of the distribution, highlighting patterns such as higher variability on weekends and the need to gather more data for weekdays with missing values.
