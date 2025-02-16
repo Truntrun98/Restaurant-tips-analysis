@@ -165,4 +165,34 @@ plt.show()
 
 Output:
 ![image](https://github.com/user-attachments/assets/af671806-04e0-4f95-b10e-d7552d814134)
+### Insights and Conclusions on Tipping Behavior: Smokers vs. Non-Smokers
 
+#### Insight 1: Smokers Tend to Tip Slightly More Than Non-Smokers
+
+- The mean tip value for smokers is slightly higher (3.00871) compared to non-smokers (2.991854).
+
+- The median tip value for smokers (3.00) is also higher than that of non-smokers (2.74).
+
+- This indicates that, on average, smokers tend to tip more than non-smokers.
+
+#### Insight 2: Distribution Range of Tips
+
+- The range of tips (difference between max and min values) is the same for both the common dataset and smokers (9.000).
+
+- For non-smokers, the maximum tip is slightly lower (9.000), suggesting that non-smokers have a narrower range of tip values.
+
+- Smokers contribute to the higher end of the tip distribution.
+
+### Histogram Observations
+
+- The histogram for smokers shows a higher frequency at the upper end of the tip values compared to non-smokers.
+
+- Both histograms share a similar pattern at the lower end, indicating that the starting point for tipping is consistent across both groups.
+
+### General Conclusion
+
+- Smokers, on average, tend to tip slightly more than non-smokers. This is reflected in both the mean and median tip values, which are higher for smokers compared to non-smokers. The mean tip value for smokers is approximately 3.01, while it is around 2.99 for non-smokers. Similarly, the median tip value for smokers is 3.00 compared to 2.74 for non-smokers.
+
+- The visual representation highlights the higher frequency of larger tips among smokers. This insight can help businesses and service providers better understand customer behavior and potentially tailor their services accordingly.
+
+👨👩 Do males give more tips?
