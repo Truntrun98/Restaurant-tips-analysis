@@ -5,6 +5,8 @@ In this project, I analyze restaurant tipping patterns using data from this data
 
 ### Stage 1: Import and examine the data set.
 
+#### Import data:
+
 Input:
 ```python
 #Import the libraries
@@ -25,5 +27,45 @@ Output:
 |  2 | 21.01     | 3.50 | Male   | No     | Sun  | Dinner | 3    |
 |  3 | 23.68     | 3.31 | Male   | No     | Sun  | Dinner | 2    |
 |  4 | 24.59     | 3.61 | Female | No     | Sun  | Dinner | 4    |
-![image](https://github.com/user-attachments/assets/a9dca1eb-88d3-477a-bb7a-c600e3cb4f7c)
+
+#### Show the columns of the dataframe and their types:
+
+Input:
+```python
+print(df.dtypes)
+```
+
+Output:
+| Column Name  | Data Type |
+|-------------|-----------|
+| id          | int64     |
+| total_bill  | float64   |
+| tip         | float64   |
+| sex         | object    |
+| smoker      | object    |
+| day         | object    |
+| time        | object    |
+| size        | int64     |
+
+We have string columns considered as objects at [sex], [smoker], [day], [time].
+Let's fix their types and make them string:
+
+Input:
+```python
+columns_to_convert = ['sex', 'smoker', 'day', 'time']
+df[columns_to_convert] = df[columns_to_convert].astype(pd.StringDtype())
+print(df.dtypes)
+```
+Output:
+
+| Column Name  | Data Type         |
+|-------------|------------------|
+| id          | int64            |
+| total_bill  | float64          |
+| tip         | float64          |
+| sex         | string (Python)  |
+| smoker      | string (Python)  |
+| day         | string (Python)  |
+| time        | string (Python)  |
+| size        | int64            |
 
