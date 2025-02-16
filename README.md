@@ -134,3 +134,35 @@ Output:
 | Max       | 10.000  | 10.000   | 9.000       |
 | Mean      | 2.998   | 3.009    | 2.992       |
 | Median    | 2.900   | 3.000    | 2.740       |
+
+#### Histogram
+
+Input:
+```python
+fig, axes = plt.subplots(1, 3, figsize=(45, 5))
+# Chart 1: Whole dataset tip values
+axes[0].hist(df['tip'], bins = 20, color='#74b9ff')
+axes[0].set_xlabel('Tip value')
+axes[0].set_ylabel('Frequency')
+axes[0].set_title('Whole dataset tip values')
+axes[0].grid(True)
+# Chart 2: Smokers tip values
+axes[1].hist(smokers_df['tip'], bins = 20, color='#ff7675')
+axes[1].set_xlabel('Tip value')
+axes[1].set_ylabel('Frequency')
+axes[1].set_title('Smokers tip values')
+axes[1].grid(True)
+# Chart 3: Non-smokers tip values
+axes[2].hist(non_smokers_df['tip'], bins = 20, color='#55efc4')
+axes[2].set_xlabel('Tip value')
+axes[2].set_ylabel('Frequency')
+axes[2].set_title('Non-smokers tip values')
+axes[2].grid(True)
+
+plt.tight_layout()
+plt.show()
+```
+
+Output:
+![image](https://github.com/user-attachments/assets/af671806-04e0-4f95-b10e-d7552d814134)
+
