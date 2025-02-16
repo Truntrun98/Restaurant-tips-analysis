@@ -87,4 +87,33 @@ Output:
 | 75%        | 182.250  | 24.128     | 3.563    | 3.000    |
 | max        | 243.000  | 50.810     | 10.000   | 6.000    |
 
+### Stage 2: Hypothesis testing
 
+#### 🚬 Do people who smoke give more tips?
+
+In this analysis, I will compare the measures of central tendency of tip values between non-smokers and smokers.
+```python
+#Create a new dataframe smokers_df containing only info about smokers.
+smokers_df = df[df['smoker'] == 'Yes']
+
+#Create a new dataframe non_smokers_df containing only non-smokers.
+non_smokers_df = df[df['smoker'] == 'No']
+
+#smokers_df measures of central tendency
+smokers_tip_min = smokers_df['tip'].min()
+smokers_tip_max = smokers_df['tip'].max()
+smokers_tip_mean = smokers_df['tip'].mean()
+smokers_tip_median = smokers_df['tip'].median()
+
+#non_smokers_df measures of central tendency
+non_smokers_tip_min = non_smokers_df['tip'].min()
+non_smokers_tip_max = non_smokers_df['tip'].max()
+non_smokers_tip_mean = non_smokers_df['tip'].mean()
+non_smokers_tip_median = non_smokers_df['tip'].median()
+
+#whole dataset df measures of central tendency
+common_tip_min = df['tip'].min()
+common_tip_max = df['tip'].max()
+common_tip_mean = df['tip'].mean()
+common_tip_median = df['tip'].median()
+```
