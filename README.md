@@ -292,3 +292,124 @@ Output:
 - Males, on average, tend to tip slightly more than females. This is reflected in both the mean and median tip values, which are higher for males compared to females. The mean tip value for males is approximately 3.09, while it is around 2.83 for females. Similarly, the median tip value for males is 3.00 compared to 2.75 for females.
 
 - The visual representation highlights the higher frequency of larger tips among males. This insight can help businesses and service providers better understand customer behavior and potentially tailor their services accordingly.
+
+### 📆 Do weekends bring more tips?
+
+In this question, I will repeat the steps and adjust the codes to fit the purpose. Instead of creating the dataframe by genders, I will create it by weekdays and show the histogram of the days in order to compare them to each other and to the average.
+I encountered a situation where, despite completing the coding part, I discovered that the dataset is missing for Monday, Tuesday, and Wednesday. This missing data is crucial for the analysis, and I need assistance in obtaining or generating the necessary information to fill the gap.
+
+Input:
+```python
+#Creating new df for day:
+sun_df = df[df['day'] == 'Sun']
+mon_df = df[df['day'] == 'Mon']
+tue_df = df[df['day'] == 'Tue']
+wed_df = df[df['day'] == 'Wed']
+thu_df = df[df['day'] == 'Thur']
+fri_df = df[df['day'] == 'Fri']
+sat_df = df[df['day'] == 'Sat']
+
+# Calculate measures of central tendency for each day
+def calculate_central_tendency(day_df):
+  return { 'min': day_df['tip'].min(),
+           'max': day_df['tip'].max(),
+           'mean': day_df['tip'].mean(),
+           'median': day_df['tip'].median()
+}
+
+sun_central_tendency = calculate_central_tendency(sun_df)
+mon_central_tendency = calculate_central_tendency(mon_df)
+tue_central_tendency = calculate_central_tendency(tue_df)
+wed_central_tendency = calculate_central_tendency(wed_df)
+thu_central_tendency = calculate_central_tendency(thu_df)
+fri_central_tendency = calculate_central_tendency(fri_df)
+sat_central_tendency = calculate_central_tendency(sat_df)
+
+#Create new data frame
+day_central_tendency = { 'Common': {'min': common_tip_min,
+                                    'max': common_tip_max,
+                                    'mean': common_tip_mean,
+                                    'median': common_tip_median},
+                         'Sun': sun_central_tendency,
+                         'Mon': mon_central_tendency,
+                         'Tue': tue_central_tendency,
+                         'Wed': wed_central_tendency,
+                         'Thu': thu_central_tendency,
+                         'Fri': fri_central_tendency,
+                         'Sat': sat_central_tendency }
+
+df_day_central_tendency = pd.DataFrame(day_central_tendency)
+
+#Print data frame
+print(df_day_central_tendency)
+
+
+# Create chart
+fig, axos = plt.subplots(1, 7, figsize=(45, 5))
+# Chart 1: Sunday tip values
+axos[0].hist(sun_df['tip'], bins=20, color='#74b9ff')
+axos[0].set_xlabel('Tip value')
+axos[0].set_ylabel('Frequency')
+axos[0].set_title('Sunday tip values')
+axos[0].grid(True)
+# Chart 2: Monday tip values
+axos[1].hist(mon_df['tip'], bins=20, color='#ff7675')
+axos[1].set_xlabel('Tip value')
+axos[1].set_ylabel('Frequency')
+axos[1].set_title('Monday tip values')
+axos[1].grid(True)
+# Chart 3: Tuesday tip values
+axos[2].hist(tue_df['tip'], bins=20, color='#55efc4')
+axos[2].set_xlabel('Tip value')
+axos[2].set_ylabel('Frequency')
+axos[2].set_title('Tuesday tip values')
+axos[2].grid(True)
+# Chart 4: Wednesday tip values
+axos[3].hist(wed_df['tip'], bins=20, color='#ffeaa7')
+axos[3].set_xlabel('Tip value')
+axos[3].set_ylabel('Frequency')
+axos[3].set_title('Wednesday tip values')
+axos[3].grid(True)
+# Chart 5: Thursday tip values
+axos[4].hist(thu_df['tip'], bins=20, color='#a29bfe')
+axos[4].set_xlabel('Tip value')
+axos[4].set_ylabel('Frequency')
+axos[4].set_title('Thursday tip values')
+axos[4].grid(True)
+# Chart 6: Friday tip values
+axos[5].hist(fri_df['tip'], bins=20, color='#fab1a0')
+axos[5].set_xlabel('Tip value')
+axos[5].set_ylabel('Frequency')
+axos[5].set_title('Friday tip values')
+axos[5].grid(True)
+# Chart 7: Saturday tip values
+axos[6].hist(sat_df['tip'], bins=20, color='#fd79a8')
+axos[6].set_xlabel('Tip value')
+axos[6].set_ylabel('Frequency')
+axos[6].set_title('Saturday tip values')
+axos[6].grid(True)
+plt.tight_layout()
+plt.show()
+
+# Extract the mean values for each day
+mean_values = df_day_central_tendency.loc['mean', ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']]
+# Create a column chart
+plt.figure(figsize=(10, 6))
+mean_values.plot(kind='bar', color='#74b9ff')
+plt.xlabel('Day of the Week')
+plt.ylabel('Average Tip Value')
+plt.title('Average (Mean) Tip Values by Day of the Week')
+plt.grid(axis='y')
+plt.show()
+```
+Output:
+|            | Common  | Sun       | Mon       | Tue       | Wed       | Thu       | Fri       | Sat      |          
+|---------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| min     | 1.000000  | 1.010000  | NaN       | NaN       | NaN       | 1.250000  | 1.000000  | 1.000000  |
+| max     | 10.000000 | 6.500000  | NaN       | NaN       | NaN       | 6.700000  | 4.730000  | 10.000000 |
+| mean    | 2.998279  | 3.255132  | NaN       | NaN       | NaN       | 2.771452  | 2.734737  | 2.993103  |
+| median  | 2.900000  | 3.150000  | NaN       | NaN       | NaN       | 2.305000  | 3.000000  | 2.750000  |
+
+![image](https://github.com/user-attachments/assets/25d6ecaa-20d7-4b62-8ba1-7d170a82e47b)
+![image](https://github.com/user-attachments/assets/88343ae2-5e42-4acf-b174-4634afcd5415)
+
