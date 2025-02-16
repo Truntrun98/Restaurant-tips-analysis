@@ -89,7 +89,7 @@ Output:
 
 ### Stage 2: Hypothesis testing
 
-#### 🚬 Do people who smoke give more tips?
+### 🚬 Do people who smoke give more tips?
 
 In this analysis, I will compare the measures of central tendency of tip values between non-smokers and smokers.
 ```python
