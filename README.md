@@ -195,4 +195,70 @@ Output:
 
 - The visual representation highlights the higher frequency of larger tips among smokers. This insight can help businesses and service providers better understand customer behavior and potentially tailor their services accordingly.
 
-👨👩 Do males give more tips?
+### 👨👩 Do males give more tips?
+"In this question, I will perform the same steps as in the previous question: creating males_df and females_df, generating their histograms, and comparing them.
+
+Input:
+```Python
+#Creating new df for sex:
+males_df = df[df['sex'] == 'Male']
+females_df = df[df['sex'] == 'Female']
+
+#Calculate central tendency:
+
+
+males_tip_min = males_df['tip'].min()
+males_tip_max = males_df['tip'].max()
+males_tip_mean = males_df['tip'].mean()
+males_tip_median = males_df['tip'].median()
+
+females_tip_min = females_df['tip'].min()
+females_tip_max = females_df['tip'].max()
+females_tip_mean = females_df['tip'].mean()
+females_tip_median = females_df['tip'].median()
+
+#Create new data frame for central tendency:
+common_males_females_tip = {
+    'Common': [common_tip_min, common_tip_max, common_tip_mean, common_tip_median],
+    'Males': [males_tip_min, males_tip_max, males_tip_mean, males_tip_median],
+    'Females': [females_tip_min, females_tip_max, females_tip_mean, females_tip_median]
+}
+
+index_labels = ["Min", "Max", "Mean", "Median"]
+df_common_males_females_tip = pd.DataFrame(common_males_females_tip, index=index_labels)
+
+#Create chart
+fig, axis = plt.subplots(1, 3, figsize=(45, 5))
+# Chart 1: Whole dataset tip values
+axis[0].hist(df['tip'], bins = 20, color='#74b9ff')
+axis[0].set_xlabel('Tip value')
+axis[0].set_ylabel('Frequency')
+axis[0].set_title('Whole dataset tip values')
+axis[0].grid(True)
+# Chart 2: Males tip values
+axis[1].hist(males_df['tip'], bins = 20, color='#ff7675')
+axis[1].set_xlabel('Tip value')
+axis[1].set_ylabel('Frequency')
+axis[1].set_title('Males tip values')
+axis[1].grid(True)
+# Chart 3: Females tip values
+axis[2].hist(females_df['tip'],  bins = 20,color='#55efc4')
+axis[2].set_xlabel('Tip value')
+axis[2].set_ylabel('Frequency')
+axis[2].set_title('Females tip values')
+axis[2].grid(True)
+
+plt.tight_layout()
+plt.show()
+
+#Print data frame
+df_common_males_females_tip
+```
+Output:
+![image](https://github.com/user-attachments/assets/4355ae45-5f52-4432-9dae-ddfa58819129)
+| | Common  | Males   | Females  |
+|------------|---------|---------|----------|
+| Min       | 1.000   | 1.000   | 1.000    |
+| Max       | 10.000  | 10.000  | 6.500    |
+| Mean      | 2.998   | 3.090   | 2.833    |
+| Median    | 2.900   | 3.000   | 2.750    |
