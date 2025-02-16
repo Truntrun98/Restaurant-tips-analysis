@@ -57,7 +57,6 @@ df[columns_to_convert] = df[columns_to_convert].astype(pd.StringDtype())
 print(df.dtypes)
 ```
 Output:
-
 | Column Name  | Data Type         |
 |-------------|------------------|
 | id          | int64            |
@@ -68,4 +67,24 @@ Output:
 | day         | string (Python)  |
 | time        | string (Python)  |
 | size        | int64            |
+
+#### Basic descriptive statistics
+
+Input:
+```python
+df.describe()
+```
+
+Output:
+| Null  | id        | total_bill | tip      | size     |
+|------------|----------|------------|----------|----------|
+| count      | 244.000  | 244.000    | 244.000  | 244.000  |
+| mean       | 121.500  | 19.786     | 2.998    | 2.570    |
+| std        | 70.581   | 8.902      | 1.384    | 0.951    |
+| min        | 0.000    | 3.070      | 1.000    | 1.000    |
+| 25%        | 60.750   | 13.348     | 2.000    | 2.000    |
+| 50%        | 121.500  | 17.795     | 2.900    | 2.000    |
+| 75%        | 182.250  | 24.128     | 3.563    | 3.000    |
+| max        | 243.000  | 50.810     | 10.000   | 6.000    |
+
 
